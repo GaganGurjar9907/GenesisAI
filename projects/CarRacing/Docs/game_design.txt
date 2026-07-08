@@ -1,0 +1,135 @@
+## Game Design document - Speed Surge – A Casual Car Racing Gem
+
+**1. Executive Summary:**
+
+Speed Surge will be a casual car racing game focusing on quick, colorful matches and progression through varied themed tracks with a heavy emphasis on skillful maneuvering rather than strict competitive lap times.  The game will feature dynamic events and customization options encouraging replayability without demanding intense challenge for newcomers while keeping the experienced gamer entertained. We’ll aim to create a vibrant world with a distinctive aesthetic, leveraging intuitive controls and polished visual feedback. 
+
+**2. Game Title:** Speed Surge
+
+
+**3. Concept & Overview:**
+
+* **Genre**: Casual Car Racing
+* **Genre Blend**: Simulation, Puzzle
+    *  The core loop revolves around driving through dynamic scenarios, completing challenges, upgrading vehicles, and earning rewards.
+* **Core Gameplay Loop**: Rapid-Fire Challenges – Each race or scenario ends in a collection of short, rewarding challenges that contribute to progression - scoring boosts from the collected challenges.
+* **Style:** Vibrant & Cartoonish  – Aim for bright colours, stylized vehicle designs, and engaging particle effects reminiscent of anime or adventure games (lightly influencing tone). 
+
+
+**4. Game Description – Core Mechanics & Features:**
+
+ * **Driving**: Intuitive analog stick controls.  Allow players to lean and adjust acceleration for a responsive experience but avoid complex control systems.
+* **Environments**: A collection of themed tracks designed around varied scenarios - desert, city streets, ice arenas, underwater tunnels, etc. 
+
+
+* **Race Types:**
+    * **Standard Race:** Straight-line speed and drifting.  
+    * **Challenge Rush:** Combine driving with reactive elements (e.g., dodging obstacles, performing tricks).
+    * **Obstacle Course:** Navigate a series of complex circular tracks with varied hurdles and drops. 
+ * **Events**: Dynamically generated events: Boosts, power-ups, special track setups, “capture” mechanics -  adding replay value. 
+   * **Capture Mechanic (Small)**: A small ability to briefly "grab" an enemy vehicle (a slightly slowed opponent or a ghost car) during the race for immediate advantages in challenging scenarios (requires careful trajectory).
+
+
+* **Vehicles:** Small selection of collectible cars with varying stats and abilities (start strong but not heavily optimized). 
+   *  Customization – Minor visual tweaks (color, small decals).  
+
+
+**5. Gameplay & Systems Detail**
+
+* **Progressive Upgrades:** Players earn currency or stars through racing to unlock upgrades:
+    *  Performance boosters (speed increase) - Basic level.
+    *  Ability boosts(gravity manipulation.) -  Mid-level.
+    *  Vehicles/Cosmetic Customization - Further level, requires high scores.
+
+
+* **Lane Selection:** Short lane selections for immediate turns
+
+
+
+* **Scoring System:** Based on Race Points (RP) accumulated throughout the game.
+
+* **Daily Challenges**: Players can accept challenges with increased rewards to encourage replayability
+
+
+
+
+**6. Art Style & Sound Design – Visuals:**
+
+*   **Style**: Cartoonish and Bright - Think a blend of "Hot Wheels" and “Minecraft” graphics but more stylised
+*  Background Elements : Unique and vibrant color palettes for each theme to maintain a varied look, while maintaining a consistent overall aesthetic.
+
+ * **Sound Effects (SFX):** Large emphasis on impactful sound design reflecting the feeling of speed & peril:
+    * Vehicle acceleration & deceleration sounds. 
+   * Obstacle-related events (e.g., dents, boosts) – percussive sounds to indicate impact.
+
+
+  * **Music**: Upbeat but atmospheric electronic background music with occasional themed song clips.
+
+
+
+**7. User Interface & Controls:**
+
+* **Simple and Clean:** The UI should be easy to understand without cluttering the gameplay experience . 
+   *  Start screen shows current match status & track selections
+   *  Brief overlay showing speed, score and nearby challenges
+
+
+
+
+* **Basic Control Scheme**: Analog stick control for steering. Limited button options for quick actions (e.g., tap for a boost).
+
+
+
+**8. Narrative & Lore - “The Speed Surge”**
+
+* **World:** A world centered around vibrant, geometric city environments that change to mimic levels that they are moving through as the game plays. 
+
+
+ *   Background narrative - introduce small "hints" of lore by including visual fragments like symbols or echoes within each level and track.
+
+
+
+**9. Stages/Tracks Design – Example (Desert Track)**
+
+* **Difficulty:** Medium
+* **Characteristics**: Narrower lane sections, lots of drifting opportunities, sand surfaces creating a sense of speed through the air
+    *  Track design emphasizes height and perspective - high-angle camera shots
+
+
+*    **Specific Scenarios:** Introduce "Quick Sprint" challenges (accelerate quickly from dead end to clear obstacles) .
+
+**10. Monetisation:** (Planned, Low Priority Initially)
+
+* *One time purchase:* Cost is 9.99
+
+
+**11. Technical Specifications:**
+
+*  Platform Support: Switch, PC
+*   Game Engine: Unity or similar cross-platform engine
+
+**12. Measurement – Success Metrics & KPIs**
+
+*   Daily Active Users (DAU) - Focus on player retention
+ * Completion Rate of challenges – Gauge skill and engagement.
+
+
+*   Retention Rate - Track % of users returning for new matches/updates after a month/year. 
+  * Player Spending. (based solely on the reward system but will gauge how desirable the game’s currency is.)
+
+
+
+**13. Post Development Phase:**
+
+* Implement initial vehicle and track design art
+ * Core gameplay loop testing: Iterate the controls, challenges, and balancing.
+ * Initial Beta test with user feedback iteration 
+
+
+---
+
+To help flesh out this document even further, let's delve into more specific details and potentially create rough wireframes or mood boards for key visuals (vehicles and environments). I can answer any of these questions as well:
+
+*   **Specifically what kind of car looks like a “Speed Surge”?** (Small muscle vehicles? Large, armored transports?)
+*   What level of challenge are you envisioning with the Obstacle Course tracks?
+*  Can we incorporate themes further into one particular genre of vehicle?
