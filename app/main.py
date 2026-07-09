@@ -6,6 +6,8 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from engine.generator import generate
 from engine.project_manager import create_project
 from engine.loader import list_projects
+from engine.continue_project import continue_project
+from engine.ai_chat import ai_chat
 from app.config import VERSION
 from app.menu import show_menu
 
@@ -24,7 +26,7 @@ if choice == "1":
         print("\n✅ Genesis AI Connected")
         exit()
 
-    create_project(project_name)
+    create_project(project_name, idea)
 
     print("\nGenerating Game Design...")
 
@@ -57,9 +59,11 @@ elif choice == "2":
         selected_project = projects[project_no - 1]
 
         print(f"\n✅ Project Loaded: {selected_project}")
+        continue_project(selected_project)
 
 elif choice == "3":
-    print("\n🤖 AI Chat - Coming Soon")
+    project_name = input("\nProject Name: ")
+    ai_chat(project_name)
 
 elif choice == "4":
     print("\n⚙️ Settings - Coming Soon")
