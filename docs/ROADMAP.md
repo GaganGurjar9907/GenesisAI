@@ -1,19 +1,40 @@
 # Genesis AI Roadmap
 
-## Version 0.4
+## Phase 1 - Foundation ✅
 - Project Manager
-- AI Memory
 - AI Chat
+- Memory
+- Planner
+- Task Queue
 
-## Version 0.5
-- Story Generator
-- Character Generator
-- Map Generator
+## Phase 2 - Brain 🚧
+- Brain
+- Decision Engine
+- Command Parser
+- Context Manager
 
-## Version 0.6
-- Mission Generator
-- Vehicle Generator
-- Save / Load System
+## Phase 3 - Engine
+- Builder
+- Scene Engine
+- Asset Manager
+- Physics Engine
+- Render Engine
 
-## Version 1.0
-- Complete AI Game Development Platform
+## Phase 4 - Builders
+- Terrain Builder
+- City Builder
+- Building Builder
+- NPC Builder
+- Vehicle Builder
+
+## Phase 5 - Export
+- Windows Build
+- Android APK
+- Roblox Export
+- Unity Export
+
+## Phase 6 - Autonomous AI
+- One Prompt → Complete Game
+- Self Testing
+- Self Fixing
+- Auto Build
