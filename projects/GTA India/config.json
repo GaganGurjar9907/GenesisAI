@@ -1,0 +1,11 @@
+{
+    "project_name": "GTA India",
+    "engine": "Genesis AI",
+    "version": "0.7",
+    "genre": "Open World Action",
+    "language": "Python",
+    "target_engine": "Genesis Engine",
+    "build": "Development",
+    "author": "Genesis AI",
+    "status": "In Development"
+}

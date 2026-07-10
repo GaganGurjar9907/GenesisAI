@@ -2,18 +2,29 @@ class Context:
 
     def __init__(self):
 
-        self.project = ""
-        self.genre = ""
-        self.platform = ""
-        self.engine = ""
+        self.data = {}
+
+    def set(self, key, value):
+
+        self.data[key] = value
+
+    def get(self, key, default=None):
+
+        return self.data.get(key, default)
+
+    def update(self, values):
+
+        self.data.update(values)
+
+    def clear(self):
+
+        self.data.clear()
 
     def show(self):
 
-        print("\n========== CONTEXT ==========")
+        print("\n========== CONTEXT ==========\n")
 
-        print(f"Project : {self.project}")
-        print(f"Genre   : {self.genre}")
-        print(f"Platform: {self.platform}")
-        print(f"Engine  : {self.engine}")
+        for key, value in self.data.items():
+            print(f"{key} : {value}")
 
-        print("=============================\n")
+        print("\n=============================\n")

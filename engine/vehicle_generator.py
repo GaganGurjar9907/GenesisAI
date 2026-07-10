@@ -1,35 +1,49 @@
+import json
 import os
-from engine.generator import generate
 
 
-def generate_vehicles(project_name, count=30):
+def generate_vehicles(project_name):
 
-    folder = os.path.join(
+    vehicles = {
+
+        "cars": [
+            "Sedan",
+            "SUV",
+            "Sports Car"
+        ],
+
+        "bikes": [
+            "Street Bike",
+            "Off Road Bike"
+        ],
+
+        "trucks": [
+            "Cargo Truck"
+        ],
+
+        "buses": [
+            "City Bus"
+        ],
+
+        "emergency": [
+            "Police Car",
+            "Ambulance",
+            "Fire Truck"
+        ]
+    }
+
+    vehicle_file = os.path.join(
         "projects",
         project_name,
-        "Vehicles"
+        "vehicles.json"
     )
 
-    os.makedirs(folder, exist_ok=True)
+    with open(vehicle_file, "w", encoding="utf-8") as file:
+        json.dump(
+            vehicles,
+            file,
+            indent=4,
+            ensure_ascii=False
+        )
 
-    prompt = f"""
-Create {count} vehicles.
-
-Include:
-
-Vehicle Name
-Category
-Top Speed
-Description
-"""
-
-    result = generate(prompt)
-
-    with open(
-        os.path.join(folder, "vehicles.txt"),
-        "w",
-        encoding="utf-8"
-    ) as file:
-        file.write(result)
-
-    return "✅ Vehicles generated successfully."
+    return vehicles

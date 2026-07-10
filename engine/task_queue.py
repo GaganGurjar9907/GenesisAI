@@ -1,31 +1,29 @@
+from collections import deque
+
+
 class TaskQueue:
 
     def __init__(self):
-        self.tasks = []
+        self.queue = deque()
 
-    def add_task(self, name):
-        self.tasks.append(
-            {
-                "name": name,
-                "status": "Pending"
-            }
-        )
+    def add_tasks(self, tasks):
+        for task in tasks:
+            self.queue.append(task)
 
-    def complete_task(self, name):
+    def get_next_task(self):
+        if len(self.queue) == 0:
+            return None
 
-        for task in self.tasks:
+        return self.queue.popleft()
 
-            if task["name"] == name:
-                task["status"] = "Completed"
+    def is_empty(self):
+        return len(self.queue) == 0
 
-    def show_tasks(self):
+    def show(self):
 
-        print("\n========== TASK QUEUE ==========")
+        print("\n========== TASK QUEUE ==========\n")
 
-        for i, task in enumerate(self.tasks, 1):
+        for i, task in enumerate(self.queue, start=1):
+            print(f"{i}. {task}")
 
-            print(
-                f"{i}. {task['name']}  [{task['status']}]"
-            )
-
-        print("===============================\n")
+        print("\n===============================\n")

@@ -1,32 +1,43 @@
+import json
 import os
-from engine.generator import generate
 
 
-def generate_missions(project_name, count=10):
+def generate_missions(project_name):
 
-    missions_folder = os.path.join(
+    missions = {
+
+        "main_missions": [
+            "First Job",
+            "Escape Mission",
+            "Gang War"
+        ],
+
+        "side_missions": [
+            "Taxi Driver",
+            "Delivery",
+            "Street Race"
+        ],
+
+        "rewards": {
+            "money": 5000,
+            "xp": 250
+        },
+
+        "difficulty": "Normal"
+    }
+
+    mission_file = os.path.join(
         "projects",
         project_name,
-        "Missions"
+        "missions.json"
     )
 
-    os.makedirs(missions_folder, exist_ok=True)
+    with open(mission_file, "w", encoding="utf-8") as file:
+        json.dump(
+            missions,
+            file,
+            indent=4,
+            ensure_ascii=False
+        )
 
-    prompt = f"""
-Create {count} unique game missions.
-For each mission provide:
-- Mission Title
-- Objective
-- Reward
-"""
-
-    result = generate(prompt)
-
-    with open(
-        os.path.join(missions_folder, "missions.txt"),
-        "w",
-        encoding="utf-8"
-    ) as file:
-        file.write(result)
-
-    return "✅ Missions generated successfully."
+    return missions

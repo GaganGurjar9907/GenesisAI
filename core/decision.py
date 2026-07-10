@@ -1,16 +1,28 @@
+from core.dependency_graph import DependencyGraph
+
+
 class DecisionEngine:
 
-    def choose(self, prompt):
+    def __init__(self):
+        self.graph = DependencyGraph()
 
-        prompt = prompt.lower()
+    def resolve(self, task):
 
-        if "gta" in prompt:
-            return "Open World"
+        ordered = []
+        visited = set()
 
-        if "racing" in prompt:
-            return "Racing"
+        def visit(current):
 
-        if "fps" in prompt:
-            return "Shooter"
+            if current in visited:
+                return
 
-        return "General"
+            visited.add(current)
+
+            for dep in self.graph.get_dependencies(current):
+                visit(dep)
+
+            ordered.append(current)
+
+        visit(task)
+
+        return ordered

@@ -1,7 +1,3 @@
-import json
-import os
-
-
 class GameBlueprint:
 
     def __init__(self):
@@ -10,42 +6,27 @@ class GameBlueprint:
             "title": "",
             "genre": "",
             "theme": "",
-            "camera": "",
+            "platform": [],
             "graphics": "",
-            "world_size": "",
-            "platforms": [],
+            "camera": "",
             "players": 1,
-            "target_fps": 60
+            "map_size": "",
+            "story": "",
+            "weather": "",
+            "time_cycle": "",
+            "physics": "",
+            "ai_level": "",
+            "language": "English"
         }
 
-    def save(self, project_name):
+    def set(self, key, value):
+        self.data[key] = value
 
-        folder = os.path.join("projects", project_name)
+    def get(self, key):
+        return self.data.get(key)
 
-        os.makedirs(folder, exist_ok=True)
-
-        file_path = os.path.join(folder, "blueprint.json")
-
-        with open(file_path, "w", encoding="utf-8") as file:
-            json.dump(self.data, file, indent=4)
-
-        print("✅ Blueprint Saved")
-
-    def load(self, project_name):
-
-        file_path = os.path.join(
-            "projects",
-            project_name,
-            "blueprint.json"
-        )
-
-        if not os.path.exists(file_path):
-            return False
-
-        with open(file_path, "r", encoding="utf-8") as file:
-            self.data = json.load(file)
-
-        return True
+    def load(self, data):
+        self.data.update(data)
 
     def show(self):
 
@@ -54,4 +35,4 @@ class GameBlueprint:
         for key, value in self.data.items():
             print(f"{key} : {value}")
 
-        print("\n====================================")
+        print("\n====================================\n")

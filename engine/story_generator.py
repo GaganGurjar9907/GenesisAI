@@ -1,33 +1,39 @@
-from engine.generator import generate
-from engine.memory_engine import (
-    load_project_data,
-    save_project_data
-)
+import json
+import os
+from engine.memory_engine import save_project_data
 
 
 def generate_story(project_name, game_idea):
 
-    prompt = f"""
-Write a complete game story for this game.
+    story = {
+        "title": project_name,
+        "genre": "Open World Action",
+        "game_idea": game_idea,
 
-Game Idea:
-{game_idea}
+        "story": (
+            f"{project_name} is an open world action game based on "
+            f"{game_idea}. The player explores a huge world, completes "
+            f"missions, earns money, buys vehicles and properties, "
+            f"and builds their own criminal empire."
+        )
+    }
 
-The story should include:
+    # Save memory
+    save_project_data(project_name, story)
 
-- Background
-- Main Character
-- Goal
-- Villain
-- Ending
-"""
+    # Save story.json
+    story_file = os.path.join(
+        "projects",
+        project_name,
+        "story.json"
+    )
 
-    story = generate(prompt)
-
-    data = load_project_data(project_name)
-
-    data["story"] = story
-
-    save_project_data(project_name, data)
+    with open(story_file, "w", encoding="utf-8") as file:
+        json.dump(
+            story,
+            file,
+            indent=4,
+            ensure_ascii=False
+        )
 
     return story

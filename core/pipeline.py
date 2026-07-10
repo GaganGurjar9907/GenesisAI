@@ -1,26 +1,28 @@
-class BuildPipeline:
+from engine.planner import Planner
+from engine.task_queue import TaskQueue
+from core.agent_manager import AgentManager
+
+
+class Pipeline:
 
     def __init__(self):
 
-        self.stages = [
-            "Planning",
-            "Story",
-            "World",
-            "Characters",
-            "Vehicles",
-            "Missions",
-            "Scene",
-            "Physics",
-            "Rendering",
-            "Testing",
-            "Export"
-        ]
+        self.planner = Planner()
+        self.queue = TaskQueue()
+        self.manager = AgentManager()
 
-    def run(self):
+    def execute(self, blueprint):
 
-        print("\n========== BUILD PIPELINE ==========\n")
+        print("\n========== GENESIS PIPELINE ==========\n")
 
-        for stage in self.stages:
-            print(f"Running: {stage}")
+        tasks = self.planner.create_plan(blueprint)
+
+        self.queue.add_tasks(tasks)
+
+        while not self.queue.is_empty():
+
+            task = self.queue.get_next_task()
+
+            self.manager.execute(task)
 
         print("\n========== PIPELINE COMPLETE ==========\n")

@@ -1,8 +1,13 @@
 import os
+
 from engine.generator import generate
+from engine.memory_engine import (
+    load_project_data,
+    save_project_data
+)
 
 
-def generate_map(project_name):
+def generate_map(project_name, game_idea):
 
     folder = os.path.join(
         "projects",
@@ -12,28 +17,47 @@ def generate_map(project_name):
 
     os.makedirs(folder, exist_ok=True)
 
-    prompt = """
-Design a complete open world game map.
+    prompt = f"""
+Design a complete game world.
 
-Include:
+Game Idea:
+{game_idea}
 
-Cities
-Villages
-Roads
-Forest
-Airport
-Police Station
-Hospital
-Military Base
+Create:
+
+- World Theme
+- Cities
+- Villages
+- Highways
+- Small Roads
+- Forests
+- Rivers
+- Mountains
+- Airport
+- Railway Station
+- Police Stations
+- Hospitals
+- Military Bases
+- Ports
+- Industrial Areas
+- Tourist Places
+
+Explain every location in detail.
 """
 
-    result = generate(prompt)
+    world = generate(prompt)
 
     with open(
         os.path.join(folder, "map.txt"),
         "w",
         encoding="utf-8"
     ) as file:
-        file.write(result)
+        file.write(world)
 
-    return "✅ Map generated successfully."
+    data = load_project_data(project_name)
+
+    data["map"] = world
+
+    save_project_data(project_name, data)
+
+    return world

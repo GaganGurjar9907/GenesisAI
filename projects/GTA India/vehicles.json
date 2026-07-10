@@ -1,0 +1,22 @@
+{
+    "cars": [
+        "Sedan",
+        "SUV",
+        "Sports Car"
+    ],
+    "bikes": [
+        "Street Bike",
+        "Off Road Bike"
+    ],
+    "trucks": [
+        "Cargo Truck"
+    ],
+    "buses": [
+        "City Bus"
+    ],
+    "emergency": [
+        "Police Car",
+        "Ambulance",
+        "Fire Truck"
+    ]
+}

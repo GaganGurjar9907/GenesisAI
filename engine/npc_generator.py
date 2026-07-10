@@ -1,36 +1,49 @@
+import json
 import os
-from engine.generator import generate
 
 
-def generate_npcs(project_name, count=25):
+def generate_npcs(project_name):
 
-    folder = os.path.join(
+    npcs = {
+
+        "civilians": [
+            "Citizen 1",
+            "Citizen 2",
+            "Citizen 3"
+        ],
+
+        "police": [
+            "Police Officer 1",
+            "Police Officer 2"
+        ],
+
+        "shopkeepers": [
+            "Shopkeeper 1",
+            "Shopkeeper 2"
+        ],
+
+        "doctors": [
+            "Doctor 1"
+        ],
+
+        "gang_members": [
+            "Gang Member 1",
+            "Gang Member 2"
+        ]
+    }
+
+    npc_file = os.path.join(
         "projects",
         project_name,
-        "Characters"
+        "npc.json"
     )
 
-    os.makedirs(folder, exist_ok=True)
+    with open(npc_file, "w", encoding="utf-8") as file:
+        json.dump(
+            npcs,
+            file,
+            indent=4,
+            ensure_ascii=False
+        )
 
-    prompt = f"""
-Create {count} unique NPCs.
-
-For each NPC provide:
-
-Name
-Age
-Occupation
-Personality
-Backstory
-"""
-
-    result = generate(prompt)
-
-    with open(
-        os.path.join(folder, "npcs.txt"),
-        "w",
-        encoding="utf-8"
-    ) as file:
-        file.write(result)
-
-    return "✅ NPCs generated successfully."
+    return npcs
