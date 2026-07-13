@@ -4,21 +4,24 @@ class GameObject:
 
         self.name = name
         self.components = []
+        self.children = []
+        self.parent = None
 
     def add_component(self, component):
 
         self.components.append(component)
 
-        print(f"{component} added to {self.name}")
+    def add_child(self, child):
 
-    def show(self):
+        child.parent = self
+        self.children.append(child)
 
-        print(f"\n===== {self.name} =====")
+        print(f"{child.name} added to {self.name}")
 
-        if not self.components:
+    def show(self, level=0):
 
-            print("No Components")
+        print("  " * level + self.name)
 
-        for component in self.components:
+        for child in self.children:
 
-            print(component)
+            child.show(level + 1)
